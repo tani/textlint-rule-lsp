@@ -30,7 +30,7 @@
     "type": "git",
     "url": "git+https://github.com/tani/textlint-rule-lsp.git"
   },
-  "author": "TANIGUCHI Masaya <m@docs.csa>",
+  "author": "TANIGUCHI Masaya <m@docs.casa>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tani/textlint-rule-lsp/issues"

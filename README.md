@@ -1,6 +1,6 @@
-# textlint-rule-lsp
+# Textlint Rule LSP
 
-
+Textlint rule for language server protocol.
 
 ## Install
 
