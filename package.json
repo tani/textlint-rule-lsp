@@ -36,5 +36,8 @@
     "url": "https://github.com/tani/textlint-rule-lsp/issues"
   },
   "homepage": "https://github.com/tani/textlint-rule-lsp#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "vscode-languageclient": "^7.0.0"
+  }
 }

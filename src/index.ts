@@ -1,4 +1,5 @@
 import { TextlintRuleModule } from "@textlint/types";
+import * as VSCodeLanguageClient from "vscode-languageclient/node";
 
 export interface Options {
     // if the Str includes `allows` word, does not report it
@@ -6,6 +7,9 @@ export interface Options {
 }
 
 const report: TextlintRuleModule<Options> = (context, options = {}) => {
+    const serverOptions: VSCodeLanguageClient.ServerOptions = null as any;
+    const clientOptions: VSCodeLanguageClient.LanguageClientOptions = {};
+    const languageClient = new VSCodeLanguageClient.LanguageClient("", serverOptions, clientOptions);
     const {Syntax, RuleError, report, getSource} = context;
     const allows = options.allows || [];
     return {
