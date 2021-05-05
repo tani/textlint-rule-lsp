@@ -1,0 +1,40 @@
+{
+  "version": "0.1.0",
+  "keywords": [
+    "textlintrule"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib/",
+    "src/"
+  ],
+  "scripts": {
+    "test": "textlint-scripts test",
+    "build": "textlint-scripts build",
+    "prepublish": "npm run --if-present build",
+    "watch": "textlint-scripts build --watch"
+  },
+  "devDependencies": {
+    "@textlint/types": "^1.5.4",
+    "@types/node": "^12.20.12",
+    "textlint-scripts": "^3.0.0",
+    "textlint-tester": "^5.3.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^3.6.4"
+  },
+  "name": "textlint-rule-lsp",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tani/textlint-rule-lsp.git"
+  },
+  "author": "TANIGUCHI Masaya <m@docs.csa>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tani/textlint-rule-lsp/issues"
+  },
+  "homepage": "https://github.com/tani/textlint-rule-lsp#readme",
+  "description": ""
+}
