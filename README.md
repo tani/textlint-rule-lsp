@@ -1,6 +1,6 @@
 # Textlint Rule LSP
 
-Textlint rule for language server protocol.
+Textlint rule to check texts by language servers.
 
 ## Install
 

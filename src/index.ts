@@ -1,5 +1,5 @@
 import { TextlintRuleModule } from "@textlint/types";
-import * as jayson from "jayson";
+import * as LSP from "vscode-languageclient/node";
 
 export interface Options {
     // if the Str includes `allows` word, does not report it
@@ -9,15 +9,24 @@ export interface Options {
 const report: TextlintRuleModule<Options> = (context, options = {}) => {
     const {Syntax, RuleError, report, getSource, getFilePath} = context;
     const allows = options.allows || [];
+    
+    // Get the file URI
     const filePath = getFilePath()
     if (filePath === undefined) {
-        throw new RuleError(`The file ${filePath} is not found.`)
+        throw new RuleError(`The file ${filePath || ""} is not found.`)
     }
     const fileURI = `file://${filePath}`
-    const client = new jayson.HttpClient()
-    client.request("initialize", [])
-    client.request("textDocument/didOpen", [])
-    client.request("textDocument/didClose", [])
+
+    // Launch the language server
+    const serverOptions: LSP.ServerOptions = {
+        command: "",
+        args: []
+    }
+    const clientOption: LSP.LanguageClientOptions = {}
+    const client = new LSP.LanguageClient("textlint-rule-lsp", serverOptions, clientOption)
+    client.start()
+    client.stop()
+
     return {
         [Syntax.Str](node) { // "Str" node
             const text = getSource(node); // Get text
