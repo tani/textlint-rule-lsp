@@ -38,6 +38,6 @@
   "homepage": "https://github.com/tani/textlint-rule-lsp#readme",
   "description": "",
   "dependencies": {
-    "vscode-languageclient": "^7.0.0"
+    "jayson": "^3.6.2"
   }
 }
