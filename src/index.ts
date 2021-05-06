@@ -15,6 +15,9 @@ const report: TextlintRuleModule<Options> = (context, options = {}) => {
     }
     const fileURI = `file://${filePath}`
     const client = new jayson.HttpClient()
+    client.request("initialize", [])
+    client.request("textDocument/didOpen", [])
+    client.request("textDocument/didClose", [])
     return {
         [Syntax.Str](node) { // "Str" node
             const text = getSource(node); // Get text

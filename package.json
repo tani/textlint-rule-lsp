@@ -20,7 +20,8 @@
     "textlint-scripts": "^3.0.0",
     "textlint-tester": "^5.3.4",
     "ts-node": "^9.1.1",
-    "typescript": "^3.6.4"
+    "typescript": "^3.6.4",
+    "vscode-languageserver-types": "^3.16.0"
   },
   "name": "textlint-rule-lsp",
   "directories": {
